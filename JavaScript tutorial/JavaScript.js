@@ -7,6 +7,9 @@ var largestName = "";
 var count = 0;
 var count1 = 412;
 var count2 = 200;
+var boys = ["Peter", "lars", "Ole"];
+var girls = ["Janne", "hanne", "Sanne"];
+var newStringString = "";
 
 
 
@@ -150,3 +153,18 @@ function isItFriday()
     }
 }
 
+function addArrays(boys, girls) {
+
+    var arrayToString = "";
+    var newArray = boys.concat(girls)
+
+    console.log(newArray);
+
+    for (i = 0; i < newArray.length; i++) {
+        newStringString = arrayToString.concat[i];
+        console.log(newStringString);
+    }
+
+}
+
+addArrays(boys, girls)
