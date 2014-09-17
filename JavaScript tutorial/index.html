@@ -2,10 +2,12 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
     <title>Awesome hjemmeside</title>
-</head>
-<body>
     <script src="JavaScript.js"></script>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+</head>
+
+<body onload="checkStorage()">
+    
 
     <h1 id="h1h">Hej frække</h1>
     <table id="table">
@@ -39,7 +41,8 @@
         <br />
         <input type="text" id="age" placeholder="Enter your age">
 
-        <button type="button" id="bt3">Save in local storage</button>
+        <button type="button" id="bt3" onclick="storeLocalContent(document.querySelector('#fname').value, document.querySelector('#lname').value, document.querySelector('#age').value)">Save in local storage</button>
+        <button type="button" onclick="clearLocalContent()">Clear local storage</button>
     </form>
 
     <form><button onclick="isItFriday()" type="button" class="btn btn-danger" style="padding-top:100px; padding-left:100px;padding-right:100px;padding-bottom:100px; margin-left:50%; margin-bottom:50px;margin-right:50px;">Tør du?</button>

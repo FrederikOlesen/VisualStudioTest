@@ -8,6 +8,37 @@ var count = 0;
 var count1 = 412;
 var count2 = 200;
 
+
+
+function checkStorage() {
+
+    var bSupportsLocal = (('localStorage' in window) && window['localStorage'] !== null);
+
+    if (!bSupportsLocal) {
+        document.getElementById('info').innerHTML = "<p>Sorry. But your browser don't support localstorage </p>"
+        return;
+    }
+
+    if (window.localStorage.length != 0) {
+        document.getElementById('fname').value = window.localStorage.getItem('fname');
+        document.getElementById('lname').value = window.localStorage.getItem('lname');
+        document.getElementById('age').value = window.localStorage.getItem('age');
+    }
+}
+
+function storeLocalContent(fName, lName, yAge) {
+    window.localStorage.setItem('fname', fName);
+    window.localStorage.setItem('lname', lName);
+    window.localStorage.setItem('age', yAge);
+}
+
+function clearLocalContent(strToStore) {
+    window.localStorage.clear();
+}
+
+
+
+
 function sizeOfLongest(words) {
     for (var i = 0; i < words.length; i++) {
         if (words[i].length > count)
@@ -118,3 +149,4 @@ function isItFriday()
        alert("ITS NOT FRIDAY YET YOU MORON")
     }
 }
+
